@@ -1,0 +1,137 @@
+.chatbox{
+    height: 35rem;
+    width: 25rem;
+    overflow: hidden;
+    background-color: #11151b;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.messages{
+    height: 32rem;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: center;
+    border: 1px solid black;
+}
+
+.message-section{
+    width: 100%;
+}
+
+.message{
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    width: 90%;
+}
+
+.message.sent{
+    margin-left: auto;
+    margin-right: 0;
+    justify-content: flex-end;
+}
+
+.message .message-text{
+    text-align: left;
+    padding: 15px;
+    /* padding-bottom: 20px; */
+    max-width: 70%;
+    /* width: 70%; */
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.message .profile-pic{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden; 
+}
+
+.profile-pic img{
+    display: block;
+    width: 100%;
+}
+
+.message-form{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    align-items:stretch;
+    padding: 5px;
+}
+
+.message-form .text-input{
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.message-form .text-input input{
+    width:100%;
+    height:100%;
+    border-radius: 10px;
+}
+
+.send-button {
+    margin: 2px;
+    width: 60px;
+    background-color: transparent;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.sign-in-container{
+    border: 1px solid white;
+    width: 30rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign-in-container .title{
+    height: 50%;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-in-container .options{
+    height: 50%;
+    color: black;
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-in-container .options button{
+    height: 3.5rem;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sign-in-container .options img{
+    height: 100%;
+    margin-right: 1rem;
+}
