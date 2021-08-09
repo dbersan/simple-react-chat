@@ -12,7 +12,7 @@ In the project directory, you can run:
 
 Build:
 
-### `npm build`
+### `npm run build`
 
 Run: 
 
