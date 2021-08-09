@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import firebase from "firebase/app";
 
 import './style.css';
@@ -44,6 +44,10 @@ export default function ChatRoom({auth, messages, messagesRef}) {
         const text = e.target.value
         setInputText(text)
     }
+
+    useEffect(() => {
+        dummy.current.scrollIntoView({behavior: 'smooth'})
+    })
 
     const sendMessage = async(e) => {
         e.preventDefault()

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect} from 'react'
 
 // Firebase App (the core Firebase SDK) is always required and must be listed first
 import firebase from "firebase/app";
@@ -17,14 +17,7 @@ import ChatRoom from './components/ChatRoom'
 import SignIn from './components/SignIn'
 import SignOut from './components/SignOut'
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCjTf62arJANdwvEzgwV3B0fo97-YlgxHk",
-  authDomain: "online-bnc-wallet.firebaseapp.com",
-  projectId: "online-bnc-wallet",
-  storageBucket: "online-bnc-wallet.appspot.com",
-  messagingSenderId: "382201253147",
-  appId: "1:382201253147:web:3a00a0f59f4d9d225417be"
-};
+const firebaseConfig = require('./firebase-config')
 
 firebase.initializeApp(firebaseConfig)
 
@@ -35,7 +28,7 @@ function App() {
   const [user] = useAuthState(auth)
 
   const messagesRef = firestore.collection('messages')
-  const query = messagesRef.orderBy('createdAt', 'desc').limit(25)
+  const query = messagesRef.orderBy('createdAt', 'desc').limit(20)
   let [messages] = useCollectionData(query, {idField:'id'})
   if (messages) messages.reverse()
 
@@ -46,7 +39,7 @@ function App() {
   return (
     <div className="container">
       <div className="nav-bar">
-        <div className="title">Chatbox - Cryptocoins <img src="/touchicon-180.png" alt="image" /></div>
+        <div className="title">Chatbox with Google<img src="/touchicon-180.png" alt="image" /></div>
         {user && <SignOut auth={auth}/>}
       </div>
       <div className="App">
